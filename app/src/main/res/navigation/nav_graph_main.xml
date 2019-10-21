@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main.xml"
+    app:startDestination="@id/fm_nav1"
+    >
+
+    <fragment
+        android:id="@+id/fm_nav1"
+        android:name="com.y.jetpack_demo.navigation.NavFragment1"
+        android:label="fmNav1"
+        tools:layout="@layout/fragment_nav1"
+        >
+<!--        tools:layout在Design界面中预览布局 -->
+<!--        navigation根节点 startDestination 表示第一个显示的fragment-->
+
+        <action
+            android:id="@+id/action_fm_nav1"
+            app:destination="@id/fm_nav1"/>
+        <action
+            android:id="@+id/action_fm_nav2"
+            app:destination="@id/fm_nav2"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fm_nav2"
+        android:name="com.y.jetpack_demo.navigation.NavFragment2"
+        android:label="fmNav2"
+        tools:layout="@layout/fragment_nav2"
+        >
+
+        <argument
+            android:name="i"
+            app:argType="integer"
+            android:defaultValue="-1"
+            />
+
+        <action
+            android:id="@+id/action_fm_nav1"
+            app:destination="@id/fm_nav1"/>
+
+    </fragment>
+</navigation>
